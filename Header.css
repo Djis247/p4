@@ -1,0 +1,20 @@
+.header-container{
+    color: yellow;
+    border-width: bold;
+    background-color: rgb(181, 197, 6);
+    width: 20%;
+    position: flex;
+    margin-left: 50%; 
+    margin-right: 50%;
+    top: 0; 
+    text-align: center;
+
+}
+
+.header-title{
+    color: blue;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 3rem;
+    text-decoration: underline;
+    text-decoration-color: white;
+}
