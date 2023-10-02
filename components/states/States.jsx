@@ -33,7 +33,7 @@ class States extends React.Component {
     });
 
     return (
-      <div className="container">
+      <div className="containerStates">
         <div>
           {/* //Replace this with the code for Project 4, Problem 2 */}
           <input
