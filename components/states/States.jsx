@@ -9,16 +9,22 @@ import "./States.css";
 class States extends React.Component {
   constructor(props) {
     super(props);
-    console.log("window.models.states", window.models.states);
+    this.state = {
+      searchText: "",
+    };
   }
+
+  updateSearch = (e) => {
+    this.setState({ searchText: e.target.value });
+  };
 
   render() {
     let filteredStates = window.models.states();
-    let searchText = "al";
+    console.log("state", this.state);
 
-    if (searchText) {
-      filteredStates = filteredStates.filter(function (fs) {
-        return fs.toLowerCase().includes(searchText.toLowerCase());
+    if (this.state.searchText) {
+      filteredStates = filteredStates.filter((fs) => {
+        return fs.toLowerCase().includes(this.state.searchText.toLowerCase());
       });
     }
 
@@ -27,14 +33,25 @@ class States extends React.Component {
     });
 
     return (
-      <div>
-        {/* //Replace this with the code for Project 4, Problem 2 */}
+      <div className="container">
+        <div>
+          {/* //Replace this with the code for Project 4, Problem 2 */}
+          <input
+            className="searchInput"
+            type="text"
+            value={this.state.searchText}
+            placeholder="Search..."
+            onChange={this.updateSearch}
+          />
+          <div>Query: {this.state.searchText || "n/a"}</div>
 
-        {/* Add input field 
-            [ ] value of `searchText`
-            [ ] the field should update `searchText` in the onChange event
-        */}
-        <ul>{statesList}</ul>
+          <div className="results">
+            <div>Results:</div>
+            <ul>
+              {statesList.length ? statesList : "No matches, use a lighter"}
+            </ul>
+          </div>
+        </div>
       </div>
     );
   }
