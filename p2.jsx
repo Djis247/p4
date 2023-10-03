@@ -5,11 +5,9 @@ import States from './components/states/States';
 import Header from "./components/header/Header";
 
 ReactDOM.render(
-    <Header/>,
-    document.getElementById('reactappHeader')
-);
-
-ReactDOM.render(
-  <States />,
+  <>
+    <Header/>
+    <States />
+  </>,
   document.getElementById('reactapp'),
 );
